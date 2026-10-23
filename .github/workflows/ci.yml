@@ -1,0 +1,23 @@
+name: Validate knowledge-base governance
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify documentation manifest
+        run: python3 tools/bundle.py manifest --check
+      - name: Run offline safety and bundle tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Check executable syntax
+        run: python3 -m py_compile sync_engine.py cron_entry.py tools/bundle.py

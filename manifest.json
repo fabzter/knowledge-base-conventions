@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "sha256": "0528c2649f265308e4903ac217a76758332dc669e43c0581f00be16855e1360e",
+      "source": "vault/00_meta/Knowledge Base Conventions.md",
+      "target": "00_meta/Knowledge Base Conventions.md"
+    },
+    {
+      "sha256": "a524abd9dfb0fabb7bb6698218eee7dc6e9b1b58f16842954576454d85e90073",
+      "source": "vault/00_meta/Knowledge Base Lifecycle.md",
+      "target": "00_meta/Knowledge Base Lifecycle.md"
+    },
+    {
+      "sha256": "43558c728e8963ff2cd62cf773c1b7dc997e7423da7e1b05d690587797aa3897",
+      "source": "vault/00_meta/Knowledge Base Research and Decisions.md",
+      "target": "00_meta/Knowledge Base Research and Decisions.md"
+    },
+    {
+      "sha256": "430001aa97c0d87c2ab78515d66e4c2307b18325326aa38d6708388437a60e0e",
+      "source": "vault/00_meta/Knowledge Base Sync.md",
+      "target": "00_meta/Knowledge Base Sync.md"
+    },
+    {
+      "sha256": "9b993cf2971fce79e656c9507fc1edae211c953dada1f63c4076814576de7a7b",
+      "source": "vault/00_meta/README.md",
+      "target": "00_meta/README.md"
+    }
+  ],
+  "schema_version": 1
+}

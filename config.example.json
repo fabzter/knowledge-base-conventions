@@ -1,0 +1,17 @@
+{
+  "repo": "fabzter/knowledge-base-conventions",
+  "ref": "main",
+  "vault": "YOUR_VAULT_NAME",
+  "expected_vault_path": "/absolute/path/to/your/personal/vault",
+  "obsidian_cli": "/Applications/Obsidian.app/Contents/MacOS/obsidian-cli",
+  "state_dir": "~/.local/state/knowledge-base-sync",
+  "allowed_paths": [
+    "00_meta/README.md",
+    "00_meta/Knowledge Base Conventions.md",
+    "00_meta/Knowledge Base Research and Decisions.md",
+    "00_meta/Knowledge Base Lifecycle.md",
+    "00_meta/Knowledge Base Sync.md"
+  ],
+  "request_timeout": 8,
+  "command_timeout": 15
+}
