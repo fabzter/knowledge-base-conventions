@@ -12,6 +12,10 @@ A self-contained, PARA-centered Obsidian governance kit: research, filing rules,
 
 Vault copies use Obsidian wikilinks; this index provides normal GitHub navigation. Five public governance notes are managed. The generated sync-status note and optional local-conventions note are local only.
 
+## Our augmented PARA practice
+
+The [augmentation layer](vault/00_meta/Knowledge%20Base%20Conventions.md#our-augmentation-layer) explains how Inbox, Meta, People, Maps, Attachments, configured Templates and an existing Tags tree fit around the four PARA categories. Every folder has a purpose, workflow and boundary. The [lifecycle](vault/00_meta/Knowledge%20Base%20Lifecycle.md#8-operate-the-augmentation-layer-together) connects them through study-session and event-to-project examples. Existing owner indexes, raw sources and configured paths are preserved; this is operating guidance, not a bulk migration.
+
 ## Why duplicate the documentation?
 
 Because offline, self-contained copies are useful. The problem is independent, untraceable authoring—not duplication itself.
@@ -29,7 +33,7 @@ The skill bundle is a declared release snapshot. The vault can track a newer sou
 
 ```bash
 hermes skills tap add fabzter/agent-skills
-hermes skills install fabzter/agent-skills/personal-vault-para --yes
+hermes skills install fabzter/agent-skills/skills/personal-vault-para --yes
 ```
 
 Use `--force` when intentionally reinstalling an already installed copy, then verify installed contents. The skill is agent-neutral Markdown; Hermes is the deployment used here. Its source is [fabzter/agent-skills](https://github.com/fabzter/agent-skills/tree/main/skills/personal-vault-para).

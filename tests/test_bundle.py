@@ -45,6 +45,39 @@ class ManifestTests(unittest.TestCase):
                                  (ROOT / "skill/SKILL.md").read_text()):
             self.assertIn(target, declared)
 
+    def test_each_support_folder_has_purpose_workflow_and_boundary(self):
+        text = (ROOT / "vault/00_meta/Knowledge Base Conventions.md").read_text()
+        for folder in ("00_inbox", "00_meta", "05_people", "06_maps",
+                       "99_attachments", "Templates", "Tags"):
+            with self.subTest(folder=folder):
+                section = re.search(
+                    rf"^### `{re.escape(folder)}/`[^\n]*\n(.*?)(?=^### |^## |\Z)",
+                    text, re.MULTILINE | re.DOTALL,
+                )
+                self.assertIsNotNone(section, f"Missing support-folder practice: {folder}")
+                for label in ("**Purpose:**", "**Workflow:**", "**Boundary:**"):
+                    self.assertIn(label, section.group(1), (folder, label))
+
+    def test_augmented_study_loop_retains_source_and_routing_contract(self):
+        text = (ROOT / "vault/00_meta/Knowledge Base Lifecycle.md").read_text()
+        for marker in ("Templates/Study Session.md", "00_inbox/study/",
+                       "03_resources/learning/", "status: raw", "status: filed",
+                       "source", "verify"):
+            self.assertIn(marker, text)
+
+    def test_research_distinguishes_augmentation_from_official_para(self):
+        text = (ROOT / "vault/00_meta/Knowledge Base Research and Decisions.md").read_text()
+        self.assertIn("D7 — An explicit augmentation layer", text)
+        self.assertIn("Templates/", text)
+        self.assertIn("Tags/", text)
+
+    def test_skill_instructs_inspection_of_existing_support_workflows(self):
+        text = (ROOT / "skill/SKILL.md").read_text()
+        self.assertIn("## Augmented practice", text)
+        self.assertIn("raw", text)
+        self.assertIn("filed", text)
+        self.assertIn("Tags/", text)
+
     def test_traversal_and_noncanonical_paths_rejected(self):
         for value in ["../file", "/tmp/file", "a/../file", "a\\file", "a//file", "a/./file", "a\nfile", ""]:
             with self.subTest(value=value), self.assertRaises(ValueError):
